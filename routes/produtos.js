@@ -9,10 +9,15 @@ router.get('/product/:id', async (req, res) => {
   res.json(request);
 });
 
+router.get('/products', async (req, res) => {
+  const request = await produtos.findAll();
+  res.json(request);
+});
+
 router.post('/insertProduct', async (req, res) => {
   const { quantidade, nome, marca, custo, preco } = req.body;
   const request = await produtos.create({ quantidade, nome, marca, custo, preco });
-  res.send(request);
+  res.json(request);
 });
 
 router.put('/updateProduct', async (req, res) => {
@@ -24,6 +29,12 @@ router.put('/updateProduct', async (req, res) => {
     { where: { id } }
   );
   request[0] ? res.json(true) : res.json(false);
+});
+
+router.delete('/deleteProduct/:id', async (req, res) => {
+  const { id } = req.params;
+  const request = await produtos.destroy({ where: { id } });
+  request ? res.json(true) : res.json(false);
 });
 
 module.exports = router;
