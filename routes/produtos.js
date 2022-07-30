@@ -15,7 +15,11 @@ router.get('/product/:id', async (req, res) => {
 
 router.get('/products', async (req, res) => {
   try {
-    const request = await produtos.findAll();
+    const request = await produtos.findAll({
+      order: [
+        ['nome', 'ASC']
+    ],
+    });
     res.json(request);
   } catch (error) {
     console.log(error.message) 
