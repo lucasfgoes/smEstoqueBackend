@@ -18,7 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     nome: DataTypes.STRING,
     quantidade: DataTypes.STRING,
     valor: DataTypes.FLOAT,
-    tipo: DataTypes.STRING
+    preco: DataTypes.FLOAT,
+    tipo: DataTypes.STRING,
+    data: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'historico',

@@ -26,7 +26,13 @@ module.exports = {
       valor: {
         type: Sequelize.FLOAT
       },
+      preco: {
+        type: Sequelize.FLOAT
+      },
       tipo: {
+        type: Sequelize.STRING
+      },
+      data: {
         type: Sequelize.STRING
       },
       createdAt: {
