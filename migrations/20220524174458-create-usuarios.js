@@ -19,9 +19,9 @@ module.exports = {
         validate: { isEmail: true }
       },
       senha: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         allowNull: false,
-        validate: { len: [6, 30] }
+        validate: { len: [6, 12] }
       },
       createdAt: {
         allowNull: false,
