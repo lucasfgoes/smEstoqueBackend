@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     valor: DataTypes.FLOAT,
     preco: DataTypes.FLOAT,
     tipo: DataTypes.STRING,
-    data: DataTypes.STRING
+    data: DataTypes.STRING,
+    marca: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'historico',

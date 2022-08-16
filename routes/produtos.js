@@ -28,8 +28,8 @@ router.get('/products', async (req, res) => {
 
 router.post('/insertProduct', async (req, res) => {
   try {
-    const { quantidade, nome, marca, custo, preco } = req.body;
-    const request = await produtos.create({ quantidade, nome, marca, custo, preco });
+    const { quantidade, nome, marca, custo, preco, minimo } = req.body;
+    const request = await produtos.create({ quantidade, nome, marca, custo, preco, minimo});
     res.json(request);
   } catch (error) {
    console.log(error.message) 
@@ -38,10 +38,10 @@ router.post('/insertProduct', async (req, res) => {
 
 router.put('/updateProduct', async (req, res) => {
   try {
-    const { id, quantidade, nome, marca, custo, preco } = req.body;
+    const { id, quantidade, nome, marca, custo, preco, minimo } = req.body;
     const request = await produtos.update(
       {
-        quantidade, nome, marca, custo, preco
+        quantidade, nome, marca, custo, preco, minimo
       },
       { where: { id } }
     );

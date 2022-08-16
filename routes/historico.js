@@ -18,8 +18,8 @@ router.get('/historico', async (req, res) => {
 
   router.post('/insertHistorico', async (req, res) => {
     try {
-      const { produto_id, nome, quantidade, valor, preco, tipo, data } = req.body;
-      const request = await historico.create({ produto_id, nome, quantidade, valor, preco, tipo, data });
+      const { produto_id, nome, quantidade, valor, preco, tipo, data, marca } = req.body;
+      const request = await historico.create({ produto_id, nome, quantidade, valor, preco, tipo, data, marca });
       res.json(request);
     } catch (error) {
      console.log(error.message) 
